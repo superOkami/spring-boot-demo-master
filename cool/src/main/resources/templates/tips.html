@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tips</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<script src="../layui/layui.js"></script>
+<p id="id">哈萨克</p>
+<script>
+    layui.use(['jquery', 'layer'], function () {
+        var layer = layui.layer;
+        var $ = layui.jquery;
+        layer.tips('只想提示地精准些', '#id'),
+            $('#id').on('click', function () {
+                var that = this;
+                layer.tips('只想提示地精准些', that); //在元素的事件回调体中，follow直接赋予this即可
+            });
+        layer.tips('在上面', '#id', {
+            tips: 1
+        });
+
+        //当你想关闭当前页的某个层时
+        // var index = layer.open();
+        // var index = layer.alert();
+        // var index = layer.load();
+        var index = layer.tips();
+//正如你看到的，每一种弹层调用方式，都会返回一个index
+//         layer.close(index); //此时你只需要把获得的index，轻轻地赋予layer.close即可
+        layer.tab({
+            area: ['600px', '300px'],
+            tab: [{
+                title: 'TAB1',
+                content: '内容1'
+            }, {
+                title: 'TAB2',
+                content: '内容2'
+            }, {
+                title: 'TAB3',
+                content: '内容3'
+            }]
+        });
+        //prompt层新定制的成员如下
+        // {
+        //     formType: 1, //输入框类型，支持0（文本）默认1（密码）2（多行文本）
+        //         value: '', //初始时的值，默认空字符
+        //     maxlength: 140, //可输入文本的最大长度，默认500
+        // }
+
+//例子1
+        layer.prompt(function (value, index, elem) {
+            alert(value); //得到value
+            layer.close(index);
+        });
+
+//例子2
+        layer.prompt({
+            formType: 2,
+            value: '初始值',
+            title: '请输入值',
+            area: ['800px', '350px'] //自定义文本域宽高
+        }, function (value, index, elem) {
+            alert(value); //得到value
+            layer.close(index);
+        });
+
+    });
+</script>
+</body>
+</html>

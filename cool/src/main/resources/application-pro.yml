@@ -1,0 +1,35 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    datasource1:
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@192.168.7.35:1521:orcl
+      username: estate
+      password: estate
+
+    datasource2:
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@192.168.7.35:1521:orcl
+      username: pfuser
+      password: 123
+      maxActive: 20
+      initialSize: 5
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+
+
+
+
+
+
+

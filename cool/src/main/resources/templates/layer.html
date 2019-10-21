@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层操作</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<script src="../layui/layui.js"></script>
+<p id="id">历史的进程</p>
+<script>
+    layui.use(['jquery', 'layer'], function () {
+        // title:'7989798797',
+        var layer = layui.layer;
+        var $ = layui.jquery;
+        layer.msg('hello');
+        // layer.msg('hhh', {time: 3000})ms
+        layer.open({
+            type: 1,
+            content: '/card.html'
+        });
+        layer.open({
+            title: '在线调试'
+            , content: '可以填写任意的layer代码'
+        });
+        layer.open({
+            type: 0,
+            content: $('#id') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+        });
+        layer.open({
+            type: 2,
+            content: 'http://sentsin.com' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+        });
+        //Ajax获取
+        var str = '好看好看';
+        $.post('table2', {}, function (str) {
+            layer.open({
+                type: 1,
+                content: str //注意，如果str是object，那么需要字符拼接。
+            });
+        });
+
+        // 如果是用layer.open执行tips层
+
+        layer.open({
+            type: 4,
+            content: ['内容1222222222222222', '#id'] //数组第二项即吸附元素选择器或者DOM
+        });
+        //eg1
+        layer.alert('酷毙了', {icon: 1});
+//eg2
+        layer.msg('不开心。。', {icon: 5});
+//eg3
+        layer.load(1); //风格1的加载
+    })
+</script>
+</body>
+</html>

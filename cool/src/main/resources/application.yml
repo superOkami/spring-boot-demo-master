@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: pro
+
+
+  #springboot文件上传大小配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+    #热部署生效
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: application.yml
+
+#    spring:
+logging:
+  level:
+    com.speed.cool.Dao1: DEBUG
+    com.speed.cool.Dao2: DEBUG
+
+realEstate:
+  service:
+    url: http://47.110.150.232:9999
+#keycloak
+keycloak:
+  realm: Hello-world-authz #当前目录所在的realm
+  resource: keycloak-springboot-hello #client 名称
+  public-client: true
+  auth-server-url: http://localhost:8080/auth #keycloak启动地址
+  securityConstraints[0].authRoles[0]: user
+  securityConstraints[0].securityCollections[0].patterns: /*
+#"关闭缓存, 即时刷新"
+#spring.freemarker.cache=false
+#spring.thymeleaf.cache=true  如果开启此处会导致每次输入删除都会自动刷新哪怕你没保存
+
+
+
+
+
+

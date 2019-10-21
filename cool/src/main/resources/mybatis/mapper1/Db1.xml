@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.speed.cool.Dao1.Db1">
+    <select id="get" resultType="int">
+        select count(*) from houseroom
+    </select>
+    <select id="hh" resultType="java.util.Map">
+        select * from PLEDGEINFO where realestateproofnum = '鲁(2019)滨州市不动产证明第0016487号' and rownum =1
+    </select>
+
+</mapper>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>btn按钮</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<script src="../layui/layui.js"></script>
+
+<script>
+    layui.use(['jquery', 'layer'], function () {
+        var layer = layui.layer;
+        layer.msg('btn测试')
+        //eg1
+        layer.confirm('纳尼？', {
+            btn: ['按钮一', '按钮二', '按钮三'] //可以无限个按钮
+            , btn3: function (index, layero) {
+                //按钮【按钮三】的回调
+            }
+        }, function (index, layero) {
+            //按钮【按钮一】的回调
+        }, function (index) {
+            //按钮【按钮二】的回调
+        });
+        //eg2
+        layer.open({
+            content: 'test'
+            , btn: ['按钮一', '按钮二', '按钮三']
+            , yes: function (index, layero) {
+                //按钮【按钮一】的回调
+            }
+            , btn2: function (index, layero) {
+                //按钮【按钮二】的回调
+
+                // return false
+                // 开启该代码可禁止点击该按钮关闭
+            }
+            , btn3: function (index, layero) {
+                //按钮【按钮三】的回调
+
+                //return false 开启该代码可禁止点击该按钮关闭
+            }
+            , cancel: function () {
+                //右上角关闭回调
+
+                //return false 开启该代码可禁止点击该按钮关闭
+            }
+        });
+        layer.open({
+            content: '测试回调',
+            yes: function (index, layero) {
+                //do something
+                layer.close(index); //如果设定了yes回调，需进行手工关闭
+            },
+            cancel: function (index, layero) {
+                if (confirm('确定要关闭么')) { //只有当点击confirm框的确定时，该层才会关闭
+                    layer.close(index)
+                }
+                return false;
+            }
+        });
+    });
+</script>
+</body>
+</html>

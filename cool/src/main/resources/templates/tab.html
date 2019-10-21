@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab标签</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+</head>
+<body class="layui-layout-body">
+<script src="../layui/layui.js"></script>
+
+<div class="layui-tab" lay-allowClose="true">
+    <ul class="layui-tab-title">
+        <li class="layui-this">网站设置</li>
+        <li>用户管理</li>
+        <li>权限设置</li>
+        <li>商品管理</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">内容1</div>
+        <div class="layui-tab-item">内容2</div>
+        <div class="layui-tab-item">内容3</div>
+        <div class="layui-tab-item">内容4</div>
+        <div class="layui-tab-item">内容5</div>
+    </div>
+</div>
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+        <li class="layui-this">网站设置</li>
+        <li>用户管理</li>
+        <li>权限分配</li>
+        <li>商品管理</li>
+        <li>订单管理</li>
+    </ul>
+    <div class="layui-tab-content"></div>
+</div>
+
+<div class="layui-tab" lay-filter="test1">
+    <ul class="layui-tab-title">
+        <li class="layui-this" lay-id="111">文章列表</li>
+        <li lay-id="222">发送信息</li>
+        <li lay-id="333">权限分配</li>
+        <li lay-id="444">审核</li>
+        <li lay-id="555">订单管理</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">1</div>
+        <div class="layui-tab-item">2</div>
+        <div class="layui-tab-item">3</div>
+        <div class="layui-tab-item">4</div>
+        <div class="layui-tab-item">5</div>
+    </div>
+</div>
+
+<!--<div class="layui-anim layui-anim-up layui-anim-loop"></div>-->
+
+<!--&lt;!&ndash;<div class="layui-tab">&ndash;&gt;-->
+<!--&lt;!&ndash;<ul class="layui-tab-title">&ndash;&gt;-->
+<!--&lt;!&ndash;<li class="layui-this">标题一</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>标题二</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li>标题三</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="layui-tab-content">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="layui-tab-item layui-show">内容1</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="layui-tab-item">内容2</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="layui-tab-item">内容3</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<div class="layui-row layui-col-space10">-->
+<!--<div class="layui-col-md4">-->
+<!--1/3-->
+<!--</div>-->
+<!--<div class="layui-col-md4">-->
+<!--1/3-->
+<!--</div>-->
+<!--<div class="layui-col-md4">-->
+<!--1/3-->
+<!--</div>-->
+<!--</div>-->
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+        //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+        console.log(location.hash);
+
+        var layid = location.hash.replace(/^#test1=/, '');
+        console.log(layid);
+
+        element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+        console.log(location.hash + "213");
+
+        //监听Tab切换，以改变地址hash值
+        element.on('tab(test1)', function () {
+            location.hash = 'test1=' + this.getAttribute('lay-id');
+            console.log(location.hash);
+        });
+    })
+</script>
+</body>
+</html>

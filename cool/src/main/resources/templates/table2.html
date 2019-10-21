@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+
+</head>
+<body class="layui-layout-body">
+<script src="../layui/layui.js"></script>
+<table class="layui-table" lay-size="lg">
+    <colgroup>
+        <col width="150">
+        <col width="200">
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>昵称</th>
+        <th>加入时间</th>
+        <th>签名</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>贤心</td>
+        <td>2016-11-29</td>
+        <td>人生就像是一场修行</td>
+    </tr>
+
+    <tr>
+        <td>许闲心</td>
+        <td>2016-11-28</td>
+        <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+    </tr>
+    <hr class="layui-bg-cyan">
+
+    </tbody>
+    <hr class="layui-bg-cyan">
+
+</table>
+<table class="layui-table" lay-skin="line">
+    行边框表格（内部结构参见右侧目录“常规用法”）
+</table>
+
+<table class="layui-table" lay-skin="row">
+    列边框表格（内部结构参见右侧目录“常规用法”）
+</table>
+
+<table class="layui-table" lay-even lay-skin="nob">
+    无边框表格（内部结构参见右侧目录“常规用法”）
+</table>
+<table class="layui-table" lay-size="sm">
+    小尺寸表格（内部结构参见右侧目录“常规用法”）
+</table>
+
+<table class="layui-table" lay-size="lg">
+    大尺寸表格（内部结构参见右侧目录“常规用法”）
+</table>
+<script>
+    layui.use('table', function () {
+        var table = layui.table;
+
+    })
+</script>
+</body>
+</html>
