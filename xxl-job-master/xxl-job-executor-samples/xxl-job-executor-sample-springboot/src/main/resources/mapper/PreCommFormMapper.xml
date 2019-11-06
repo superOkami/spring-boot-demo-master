@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.PreCommFormDao">
+
+    <resultMap id="PreCommFormRM" type="com.xxl.job.executor.model.PreCommForm">
+		<result property="UNID" column="UNID"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="DEPTID" column="DEPTID"/>
+		<result property="FORMNAME" column="FORM_NAME"/>
+		<result property="FORMUNID" column="FORM_UNID"/>
+		<result property="FORMSORT" column="FORM_SORT"/>
+		<result property="USEUNID" column="USE_UNID"/>
+		<result property="USETYPE" column="USE_TYPE"/>
+		<result property="ITEMVALUES" column="ITEM_VALUES"/>
+		<result property="REMARK" column="REMARK"/>
+		<result property="CREATETIME" column="CREATE_TIME"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `UNID`,`PROJID`,`DEPTID`,`FORM_NAME`,`FORM_UNID`,`FORM_SORT`,`USE_UNID`,`USE_TYPE`,`ITEM_VALUES`,`REMARK`,`CREATE_TIME`,`DATAVER`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="preCommFormSave" parameterType="com.xxl.job.executor.model.PreCommForm">
+		insert into PRE_COMM_FORM
+		(UNID ,PROJID ,DEPTID ,FORM_NAME ,FORM_UNID ,FORM_SORT ,USE_UNID ,USE_TYPE ,
+		ITEM_VALUES ,REMARK ,CREATE_TIME ,
+		DATAVER ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{UNID  } ,#{PROJID } ,#{DEPTID } ,#{FORMNAME} ,#{FORMUNID} ,
+		#{FORMSORT } ,#{USEUNID } ,#{USETYPE } ,#{ITEMVALUES } ,#{REMARK } ,#{CREATETIME } ,
+		#{DATAVER } ,#{MAKETIME } ,#{SIGNSTATE   } ,
+		#{EXT1 } ,#{EXT2 } ,#{EXT3} ,#{EXT4})
+	</insert>
+</mapper>

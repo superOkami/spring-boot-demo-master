@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.PreFileDao">
+
+    <resultMap id="PreFileRM" type="com.xxl.job.executor.model.PreFile">
+		<result property="UNID" column="UNID"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="ATTRNAME" column="ATTRNAME"/>
+		<result property="DEPTID" column="DEPTID"/>
+		<result property="ATTRID" column="ATTRID"/>
+		<result property="SORTID" column="SORTID"/>
+		<result property="TAKETYPE" column="TAKETYPE"/>
+		<result property="ISTAKE" column="ISTAKE"/>
+		<result property="AMOUNT" column="AMOUNT"/>
+		<result property="TAKETIME" column="TAKETIME"/>
+		<result property="FILENAME" column="FILENAME"/>
+		<result property="ENTITY" column="ENTITY"/>
+		<result property="ENTITYPATH" column="ENTITYPATH"/>
+		<result property="MEMO" column="MEMO"/>
+		<result property="CREATETIME" column="CREATE_TIME"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `UNID`,`PROJID`,`ATTRNAME`,`DEPTID`,`ATTRID`,`SORTID`,`TAKETYPE`,`ISTAKE`,`AMOUNT`,`TAKETIME`,`FILENAME`,`ENTITY`,`ENTITYPATH`,`MEMO`,`CREATE_TIME`,`DATAVER`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="preFileSave" parameterType="com.xxl.job.executor.model.PreFile">
+		insert into PRE_FILE
+		(UNID ,PROJID ,ATTRNAME ,DEPTID ,ATTRID ,SORTID ,TAKETYPE ,
+		ISTAKE ,AMOUNT ,TAKETIME ,FILENAME ,
+		ENTITY ,ENTITYPATH ,MEMO ,CREATE_TIME ,DATAVER ,MAKETIME ,
+		SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{UNID } ,#{PROJID} ,#{ATTRNAME} ,#{DEPTID} ,#{ATTRID} ,#{SORTID} ,
+		#{TAKETYPE} ,#{ISTAKE} ,#{AMOUNT} ,#{TAKETIME} ,#{FILENAME } ,#{ENTITY } ,#{ENTITYPATH} ,#{MEMO } ,
+		#{CREATETIME} ,#{DATAVER} ,
+		#{MAKETIME} ,#{SIGNSTATE} ,#{EXT1} ,#{EXT2} ,#{EXT3 } ,#{EXT4 })
+	</insert>
+</mapper>

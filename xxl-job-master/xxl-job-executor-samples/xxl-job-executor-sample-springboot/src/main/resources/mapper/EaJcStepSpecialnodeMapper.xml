@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.EaJcStepSpecialnodeDao">
+
+    <resultMap id="EaJcStepSpecialnodeRM" type="com.xxl.job.executor.model.EaJcStepSpecialnode">
+		<result property="ORGBUSNO" column="ORGBUSNO"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="STDVER" column="STDVER"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="SN" column="SN"/>
+		<result property="NODENAME" column="NODENAME"/>
+		<result property="PROCUNITNAME" column="PROCUNITNAME"/>
+		<result property="PROCUNITID" column="PROCUNITID"/>
+		<result property="PROCERID" column="PROCERID"/>
+		<result property="PROCERNAME" column="PROCERNAME"/>
+		<result property="PROCERREMARK" column="PROCERREMARK"/>
+		<result property="NODESTARTTIME" column="NODESTARTTIME"/>
+		<result property="NODEENDTIME" column="NODEENDTIME"/>
+		<result property="NOTETIME" column="NOTETIME"/>
+		<result property="NODEPROCADV" column="NODEPROCADV"/>
+		<result property="NODEPROCADDR" column="NODEPROCADDR"/>
+		<result property="NODEPROCACCORD" column="NODEPROCACCORD"/>
+		<result property="LISTS" column="LISTS"/>
+		<result property="NODERESULT" column="NODERESULT"/>
+		<result property="NODETIME" column="NODETIME"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ORGBUSNO`,`PROJID`,`REGION_ID`,`STDVER`,`DATAVER`,`SN`,`NODENAME`,`PROCUNITNAME`,`PROCUNITID`,`PROCERID`,`PROCERNAME`,`PROCERREMARK`,`NODESTARTTIME`,`NODEENDTIME`,`NOTETIME`,`NODEPROCADV`,`NODEPROCADDR`,`NODEPROCACCORD`,`LISTS`,`NODERESULT`,`NODETIME`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="eaJcStepSpecialnodeSave" parameterType="com.xxl.job.executor.model.EaJcStepSpecialnode">
+		insert into EA_JC_STEP_SPECIALNODE
+		(ORGBUSNO ,PROJID ,REGION_ID ,STDVER ,DATAVER ,SN ,NODENAME ,PROCUNITNAME ,PROCUNITID ,
+		PROCERID ,PROCERNAME ,PROCERREMARK ,NODESTARTTIME ,NODEENDTIME ,NOTETIME ,NODEPROCADV ,
+		NODEPROCADDR ,NODEPROCACCORD ,
+		LISTS ,NODERESULT ,NODETIME ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{ORGBUSNO } ,#{PROJID } ,#{REGIONID} ,#{STDVER } ,#{DATAVER} ,
+		#{SN} ,#{NODENAME} ,#{PROCUNITNAME} ,#{PROCUNITID } ,#{PROCERID} ,#{PROCERNAME  } ,
+		#{PROCERREMARK} ,#{NODESTARTTIME} ,#{NODEENDTIME } ,#{NOTETIME} ,#{NODEPROCADV } ,#{NODEPROCADDR} ,
+		#{NODEPROCACCORD} ,#{LISTS } ,#{NODERESULT  } ,#{NODETIME } ,sysdate,
+		#{SIGNSTATE} ,#{EXT1} ,#{EXT2} ,#{EXT3 } ,#{EXT4})
+	</insert>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.EaJcServevalDictDao">
+
+    <resultMap id="EaJcServevalDictRM" type="com.xxl.job.executor.model.EaJcServevalDict">
+		<result property="ID" column="ID"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="DICCODE" column="DIC_CODE"/>
+		<result property="DICNAME" column="DIC_NAME"/>
+		<result property="DESCRIBE" column="DESCRIBE"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ID`,`DATAVER`,`DIC_CODE`,`DIC_NAME`,`DESCRIBE`,`REGION_ID`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`
+	</sql>
+	<insert id="eaJcServevalDictSave" parameterType="com.xxl.job.executor.model.EaJcServevalDict">
+		insert into EA_JC_SERVEVAL_DICT
+		(ID ,DATAVER ,DIC_CODE ,DIC_NAME ,DESCRIBE ,REGION_ID ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{ID } ,#{DATAVER } ,#{DICCODE} ,#{DICNAME} ,#{DESCRIBE} ,#{REGIONID} ,sysdate ,
+		#{SIGNSTATE} ,#{EXT1 } ,#{EXT2 } ,#{EXT3 } ,#{EXT4})
+	</insert>
+</mapper>

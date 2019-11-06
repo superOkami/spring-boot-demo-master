@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.EaJcStepDoneDao">
+
+    <resultMap id="EaJcStepDoneRM" type="com.xxl.job.executor.model.EaJcStepDone">
+		<result property="ORGBUSNO" column="ORGBUSNO"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="STDVER" column="STDVER"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="DONERESULT" column="DONERESULT"/>
+		<result property="EXITRES" column="EXITRES"/>
+		<result property="CERTIFICATENAM" column="CERTIFICATENAM"/>
+		<result property="CERTIFICATENO" column="CERTIFICATENO"/>
+		<result property="CERTIFICATELIMIT" column="CERTIFICATELIMIT"/>
+		<result property="PUBLISHER" column="PUBLISHER"/>
+		<result property="ISFEE" column="ISFEE"/>
+		<result property="FEE" column="FEE"/>
+		<result property="FEESTANDARD" column="FEESTANDARD"/>
+		<result property="FEESTANDACCORD" column="FEESTANDACCORD"/>
+		<result property="PAYPERSONNAME" column="PAYPERSONNAME"/>
+		<result property="PAYPERIDCARD" column="PAYPERIDCARD"/>
+		<result property="PAYERMOBILE" column="PAYERMOBILE"/>
+		<result property="PAYERTEL" column="PAYERTEL"/>
+		<result property="OCCURTIME" column="OCCURTIME"/>
+		<result property="TRANSACTOR" column="TRANSACTOR"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ORGBUSNO`,`PROJID`,`STDVER`,`REGION_ID`,`DATAVER`,`DONERESULT`,`EXITRES`,`CERTIFICATENAM`,`CERTIFICATENO`,`CERTIFICATELIMIT`,`PUBLISHER`,`ISFEE`,`FEE`,`FEESTANDARD`,`FEESTANDACCORD`,`PAYPERSONNAME`,`PAYPERIDCARD`,`PAYERMOBILE`,`PAYERTEL`,`OCCURTIME`,`TRANSACTOR`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="eaJcStepDoneSave" parameterType="com.xxl.job.executor.model.EaJcStepDone">
+		insert into EA_JC_STEP_DONE
+		(,ORGBUSNO ,PROJID ,STDVER ,REGION_ID ,DATAVER ,DONERESULT ,EXITRES ,CERTIFICATENAM ,
+		CERTIFICATENO ,CERTIFICATELIMIT ,PUBLISHER ,ISFEE ,FEE ,FEESTANDARD ,FEESTANDACCORD ,
+		PAYPERSONNAME ,PAYPERIDCARD ,PAYERMOBILE ,
+		PAYERTEL ,OCCURTIME ,TRANSACTOR ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{ORGBUSNO } ,#{PROJID} ,#{STDVER} ,#{REGIONID } ,
+		#{DATAVER} ,#{DONERESULT} ,#{EXITRES} ,#{CERTIFICATENAM  } ,#{CERTIFICATENO } ,
+		#{CERTIFICATELIMIT} ,#{PUBLISHER } ,#{ISFEE } ,#{FEE } ,#{FEESTANDARD } ,#{FEESTANDACCORD  } ,
+		#{PAYPERSONNAME  } ,#{PAYPERIDCARD } ,#{PAYERMOBILE } ,#{PAYERTEL } ,#{OCCURTIME } ,
+		#{TRANSACTOR  } ,sysdate ,#{SIGNSTATE } ,#{EXT1},
+		#{EXT2} ,#{EXT3 } ,#{EXT4})
+	</insert>
+	<delete id="doneDelete" parameterType="java.lang.String">
+		delete  from EA_JC_STEP_DONE where ORGBUSNO = #{ORGBUSNO}
+	</delete>
+</mapper>

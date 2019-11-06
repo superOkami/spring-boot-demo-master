@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.EaJcFeeinfoDao">
+
+    <resultMap id="EaJcFeeinfoRM" type="com.xxl.job.executor.model.EaJcFeeinfo">
+        <result property="ORGBUSNO" column="ORGBUSNO"/>
+        <result property="PROJID" column="PROJID"/>
+        <result property="STDVER" column="STDVER"/>
+        <result property="DATAVER" column="DATAVER"/>
+        <result property="REGIONID" column="REGION_ID"/>
+        <result property="SN" column="SN"/>
+        <result property="FEEORGID" column="FEEORGID"/>
+        <result property="FEEORGNAME" column="FEEORGNAME"/>
+        <result property="BILLNUM" column="BILLNUM"/>
+        <result property="PAYPERSON" column="PAYPERSON"/>
+        <result property="FEETYPENAME" column="FEETYPENAME"/>
+        <result property="FEESTAND" column="FEESTAND"/>
+        <result property="FEEAMOUNT" column="FEEAMOUNT"/>
+        <result property="FEENUM" column="FEENUM"/>
+        <result property="FEESTANDAMOUNT" column="FEESTANDAMOUNT"/>
+        <result property="FEEDERATE" column="FEEDERATE"/>
+        <result property="FEETOTAL" column="FEETOTAL"/>
+        <result property="REDUCEREASON" column="REDUCEREASON"/>
+        <result property="AUDIPERSON" column="AUDIPERSON"/>
+        <result property="PAYTIME" column="PAYTIME"/>
+        <result property="STATE" column="STATE"/>
+        <result property="MAKETIME" column="MAKETIME"/>
+        <result property="SIGNSTATE" column="SIGNSTATE"/>
+        <result property="EXT1" column="EXT1"/>
+        <result property="EXT2" column="EXT2"/>
+        <result property="EXT3" column="EXT3"/>
+        <result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ORGBUSNO`,`PROJID`,`STDVER`,`DATAVER`,`REGION_ID`,`SN`,`FEEORGID`,`FEEORGNAME`,`BILLNUM`,`PAYPERSON`,`FEETYPENAME`,`FEESTAND`,`FEEAMOUNT`,`FEENUM`,`FEESTANDAMOUNT`,`FEEDERATE`,`FEETOTAL`,`REDUCEREASON`,`AUDIPERSON`,`PAYTIME`,`STATE`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+    <insert id="eaJcFeeinfoSave" parameterType="com.xxl.job.executor.model.EaJcFeeinfo">
+		insert into ea_jc_feeinfo (
+		ORGBUSNO ,PROJID ,STDVER ,DATAVER ,REGION_ID ,SN ,FEEORGID ,FEEORGNAME ,BILLNUM ,PAYPERSON ,FEETYPENAME ,FEESTAND ,FEEAMOUNT ,FEENUM ,FEESTANDAMOUNT ,FEEDERATE ,
+        FEETOTAL ,REDUCEREASON ,AUDIPERSON ,
+        PAYTIME ,STATE ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4
+		) values (
+      #{ORGBUSNO}, #{PROJID}, #{STDVER}, #{DATAVER }, #{REGIONID}, #{SN}, #{FEEORGID},
+      #{FEEORGNAME}, #{BILLNUM}, #{PAYPERSON}, #{FEETYPENAME}, #{FEESTAND}, #{FEEAMOUNT}, #{FEENUM	},
+      #{FEESTANDAMOUNT}, #{FEEDERATE}, #{FEETOTAL}, #{REDUCEREASON}, #{AUDIPERSON}, #{PAYTIME}, #{STATE},
+      #{MAKETIME}, #{SIGNSTATE}, #{EXT1}, #{EXT2}, #{EXT3}, #{EXT4}
+		)
+	</insert>
+
+</mapper>

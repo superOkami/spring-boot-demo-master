@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.PreFormFileDao">
+
+    <resultMap id="PreFormFileRM" type="com.xxl.job.executor.model.PreFormFile">
+		<result property="ORGBUSNO" column="ORGBUSNO"/>
+		<result property="STDVER" column="STDVER"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="SN" column="SN"/>
+		<result property="FILEPATH" column="FILEPATH"/>
+		<result property="FILENAME" column="FILENAME"/>
+		<result property="FILECONTENT" column="FILECONTENT"/>
+		<result property="BELONGORGID" column="BELONGORGID"/>
+		<result property="BELONGORGNAME" column="BELONGORGNAME"/>
+		<result property="CREATETIME" column="CREATE_TIME"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ORGBUSNO`,`STDVER`,`PROJID`,`DATAVER`,`REGION_ID`,`SN`,`FILEPATH`,`FILENAME`,`FILECONTENT`,`BELONGORGID`,`BELONGORGNAME`,`CREATE_TIME`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="preFormFileSave" parameterType="com.xxl.job.executor.model.PreFormFile">
+		insert into PRE_FORM_FILE
+		(ORGBUSNO ,STDVER ,PROJID ,DATAVER ,REGION_ID ,SN ,FILEPATH ,FILENAME ,FILECONTENT ,BELONGORGID ,
+		BELONGORGNAME ,CREATE_TIME ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{ORGBUSNO} ,#{STDVER } ,#{PROJID  } ,#{DATAVER } ,#{REGIONID} ,#{SN} ,#{FILEPATH} ,
+		#{FILENAME} ,#{FILECONTENT } ,#{BELONGORGID } ,#{BELONGORGNAME} ,#{CREATETIME  } ,#{MAKETIME } ,
+		#{SIGNSTATE} ,#{EXT1 } ,#{EXT2 } ,#{EXT3 } ,#{EXT4 })
+	</insert>
+</mapper>

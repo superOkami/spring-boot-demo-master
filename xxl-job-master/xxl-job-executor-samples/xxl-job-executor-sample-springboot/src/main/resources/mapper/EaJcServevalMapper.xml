@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.EaJcServevalDao">
+
+    <resultMap id="EaJcServevalRM" type="com.xxl.job.executor.model.EaJcServeval">
+		<result property="ORGBUSNO" column="ORGBUSNO"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="STDVER" column="STDVER"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="EVALRESULT" column="EVALRESULT"/>
+		<result property="EVALDATE" column="EVALDATE"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ORGBUSNO`,`PROJID`,`STDVER`,`DATAVER`,`EVALRESULT`,`EVALDATE`,`REGION_ID`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="eaJcServevalSave" parameterType="com.xxl.job.executor.model.EaJcServeval">
+		insert into EA_JC_SERVEVAL
+		(ORGBUSNO ,PROJID ,STDVER ,DATAVER ,EVALRESULT ,EVALDATE ,
+		REGION_ID ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{ORGBUSNO } ,#{PROJID } ,#{STDVER } ,#{DATAVER } ,#{EVALRESULT} ,#{EVALDATE } ,#{REGIONID} ,
+		#{MAKETIME},#{SIGNSTATE} ,#{EXT1 } ,#{EXT2 } ,#{EXT3 } ,#{EXT4 })
+	</insert>
+</mapper>

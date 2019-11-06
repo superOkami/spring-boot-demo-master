@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.PreApasinfoDao">
+
+    <resultMap id="PreApasinfoRM" type="com.xxl.job.executor.model.PreApasinfo">
+		<result property="PROJID" column="PROJID"/>
+		<result property="PROJPWD" column="PROJPWD"/>
+		<result property="ITEMNO" column="ITEMNO"/>
+		<result property="ITEMVERSION" column="ITEMVERSION"/>
+		<result property="ITEMNAME" column="ITEMNAME"/>
+		<result property="PROJECTNAME" column="PROJECTNAME"/>
+		<result property="PROJECTSTATE" column="PROJECTSTATE"/>
+		<result property="INFOTYPE" column="INFOTYPE"/>
+		<result property="ACCEPTLIST" column="ACCEPTLIST"/>
+		<result property="APPLYNAME" column="APPLYNAME"/>
+		<result property="APPLYCARDTYPE" column="APPLY_CARDTYPE"/>
+		<result property="APPLYCARDTYPENUMBER" column="APPLY_CARDTYPENUMBER"/>
+		<result property="CONTACTMAN" column="CONTACTMAN"/>
+		<result property="CONTACTMANCARDTYPE" column="CONTACTMAN_CARDTYPE"/>
+		<result property="CONTACTMANCARDNUMBER" column="CONTACTMAN_CARDNUMBER"/>
+		<result property="TELPHONE" column="TELPHONE"/>
+		<result property="POSTCODE" column="POSTCODE"/>
+		<result property="ADDRESS" column="ADDRESS"/>
+		<result property="LEGALMAN" column="LEGALMAN"/>
+		<result property="DEPTID" column="DEPTID"/>
+		<result property="DEPTNAME" column="DEPTNAME"/>
+		<result property="RECEIVEUSEID" column="RECEIVE_USEID"/>
+		<result property="RECEIVENAME" column="RECEIVE_NAME"/>
+		<result property="APPLYFROM" column="APPLYFROM"/>
+		<result property="RECEIVETIME" column="RECEIVETIME"/>
+		<result property="APPROVETYPE" column="APPROVE_TYPE"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="DATASTATE" column="DATASTATE"/>
+		<result property="CREATETIME" column="CREATE_TIME"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `PROJID`,`PROJPWD`,`ITEMNO`,`ITEMVERSION`,`ITEMNAME`,`PROJECTNAME`,`PROJECTSTATE`,`INFOTYPE`,`ACCEPTLIST`,`APPLYNAME`,`APPLY_CARDTYPE`,`APPLY_CARDTYPENUMBER`,`CONTACTMAN`,`CONTACTMAN_CARDTYPE`,`CONTACTMAN_CARDNUMBER`,`TELPHONE`,`POSTCODE`,`ADDRESS`,`LEGALMAN`,`DEPTID`,`DEPTNAME`,`RECEIVE_USEID`,`RECEIVE_NAME`,`APPLYFROM`,`RECEIVETIME`,`APPROVE_TYPE`,`REGION_ID`,`DATASTATE`,`CREATE_TIME`,`DATAVER`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="preApasinfoSave" parameterType="com.xxl.job.executor.model.PreApasinfo">
+		insert into PRE_APASINFO
+		(PROJID ,PROJPWD ,ITEMNO ,ITEMVERSION ,ITEMNAME ,PROJECTNAME ,PROJECTSTATE ,
+		INFOTYPE ,ACCEPTLIST ,APPLYNAME ,APPLY_CARDTYPE ,APPLY_CARDTYPENUMBER ,CONTACTMAN ,
+		CONTACTMAN_CARDTYPE ,CONTACTMAN_CARDNUMBER ,TELPHONE ,POSTCODE ,ADDRESS ,LEGALMAN ,
+		DEPTID ,DEPTNAME ,RECEIVE_USEID ,RECEIVE_NAME ,APPLYFROM ,RECEIVETIME ,APPROVE_TYPE ,REGION_ID ,
+		DATASTATE ,CREATE_TIME ,DATAVER ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{PROJID  } ,#{PROJPWD } ,#{ITEMNO   } ,#{ITEMVERSION } ,#{ITEMNAME } ,#{PROJECTNAME } ,
+		#{PROJECTSTATE  } ,#{INFOTYPE  } ,#{ACCEPTLIST  } ,#{APPLYNAME } ,
+		#{APPLYCARDTYPE  } ,#{APPLYCARDTYPENUMBER  } ,#{CONTACTMAN } ,#{CONTACTMANCARDTYPE } ,
+		#{CONTACTMANCARDNUMBER } ,#{TELPHONE  } ,#{POSTCODE  } ,#{ADDRESS } ,#{LEGALMAN } ,#{DEPTID  } ,
+		#{DEPTNAME  } ,#{RECEIVEUSEID  } ,#{RECEIVENAME  } ,#{APPLYFROM } ,#{RECEIVETIME } ,
+		#{APPROVETYPE  } ,#{REGIONID  } ,#{DATASTATE  } ,#{CREATETIME } ,#{DATAVER } ,
+		#{MAKETIME } ,#{SIGNSTATE } ,#{EXT1 } ,#{EXT2} ,#{EXT3} ,#{EXT4 })
+	</insert>
+</mapper>

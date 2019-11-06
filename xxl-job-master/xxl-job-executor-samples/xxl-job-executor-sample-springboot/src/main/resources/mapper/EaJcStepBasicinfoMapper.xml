@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.EaJcStepBasicinfoDao">
+
+    <resultMap id="EaJcStepBasicinfoRM" type="com.xxl.job.executor.model.EaJcStepBasicinfo">
+		<result property="ORGBUSNO" column="ORGBUSNO"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="PROJPWD" column="PROJPWD"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="STDVER" column="STDVER"/>
+		<result property="ITEMNO" column="ITEMNO"/>
+		<result property="SUBITEMNO" column="SUBITEMNO"/>
+		<result property="ITEMNAME" column="ITEMNAME"/>
+		<result property="SUBITEMNAME" column="SUBITEMNAME"/>
+		<result property="PROJECTNAME" column="PROJECTNAME"/>
+		<result property="APPLICANT" column="APPLICANT"/>
+		<result property="APPLICANTMOBILE" column="APPLICANTMOBILE"/>
+		<result property="APPLICANTTEL" column="APPLICANTTEL"/>
+		<result property="APPLICANTEMAIL" column="APPLICANTEMAIL"/>
+		<result property="ACCEPTLIST" column="ACCEPTLIST"/>
+		<result property="ACCEPTDEPTID" column="ACCEPTDEPTID"/>
+		<result property="ACCEPTDEPTNAME" column="ACCEPTDEPTNAME"/>
+		<result property="APPROVALTYPE" column="APPROVALTYPE"/>
+		<result property="PROMISETIMELIMIT" column="PROMISETIMELIMIT"/>
+		<result property="PROMISETIMEUNIT" column="PROMISETIMEUNIT"/>
+		<result property="TIMELIMIT" column="TIMELIMIT"/>
+		<result property="TIMEUNIT" column="TIMEUNIT"/>
+		<result property="SUBMIT" column="SUBMIT"/>
+		<result property="OCCURTIME" column="OCCURTIME" jdbcType="DATE"/>
+		<result property="TRANSACTOR" column="TRANSACTOR"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ORGBUSNO`,`PROJID`,`PROJPWD`,`DATAVER`,`REGION_ID`,`STDVER`,`ITEMNO`,`SUBITEMNO`,`ITEMNAME`,`SUBITEMNAME`,`PROJECTNAME`,`APPLICANT`,`APPLICANTMOBILE`,`APPLICANTTEL`,`APPLICANTEMAIL`,`ACCEPTLIST`,`ACCEPTDEPTID`,`ACCEPTDEPTNAME`,`APPROVALTYPE`,`PROMISETIMELIMIT`,`PROMISETIMEUNIT`,`TIMELIMIT`,`TIMEUNIT`,`SUBMIT`,`OCCURTIME`,`TRANSACTOR`,`MAKETIME`,`SIGNSTATE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<insert id="eaJcStepBasicinfoSave" parameterType="com.xxl.job.executor.model.EaJcStepBasicinfo">
+		insert into EA_JC_STEP_BASICINFO
+		(ORGBUSNO ,PROJID ,PROJPWD ,DATAVER ,REGION_ID ,STDVER ,ITEMNO ,SUBITEMNO ,ITEMNAME ,
+		SUBITEMNAME ,PROJECTNAME ,APPLICANT ,APPLICANTMOBILE ,APPLICANTTEL ,APPLICANTEMAIL ,ACCEPTLIST ,
+		ACCEPTDEPTID ,ACCEPTDEPTNAME ,APPROVALTYPE ,PROMISETIMELIMIT ,PROMISETIMEUNIT ,TIMELIMIT ,TIMEUNIT ,
+		SUBMIT ,OCCURTIME ,TRANSACTOR ,MAKETIME ,SIGNSTATE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{ORGBUSNO } ,#{PROJID } ,#{PROJPWD } ,#{DATAVER } ,#{REGIONID } ,
+		#{STDVER } ,#{ITEMNO} ,#{SUBITEMNO } ,#{ITEMNAME } ,#{SUBITEMNAME } ,#{PROJECTNAME  }
+		 ,#{APPLICANT } ,#{APPLICANTMOBILE} ,#{APPLICANTTEL  } ,#{APPLICANTEMAIL} ,#{ACCEPTLIST  } ,#{ACCEPTDEPTID  } ,
+		 #{ACCEPTDEPTNAME} ,#{APPROVALTYPE  } ,#{PROMISETIMELIMIT } ,#{PROMISETIMEUNIT} ,#{TIMELIMIT } ,#{TIMEUNIT } ,
+		 #{SUBMIT } ,#{OCCURTIME,jdbctype= } ,#{TRANSACTOR } ,sysdate ,#{SIGNSTATE } ,#{EXT1 } ,#{EXT2} ,#{EXT3 } ,#{EXT4 })
+	</insert>
+	<delete id="basicinfoDelete" parameterType="java.lang.String">
+		delete  from EA_JC_STEP_BASICINFO where ORGBUSNO = #{ORGBUSNO}
+	</delete>
+</mapper>

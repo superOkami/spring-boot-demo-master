@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Auto created by codeAppend plugin -->
+<mapper namespace="com.xxl.job.executor.dao.EaJcStepProcDao">
+
+    <resultMap id="EaJcStepProcRM" type="com.xxl.job.executor.model.EaJcStepProc">
+		<result property="ORGBUSNO" column="ORGBUSNO"/>
+		<result property="PROJID" column="PROJID"/>
+		<result property="DATAVER" column="DATAVER"/>
+		<result property="STDVER" column="STDVER"/>
+		<result property="SN" column="SN"/>
+		<result property="NODENAME" column="NODENAME"/>
+		<result property="NODECODE" column="NODECODE"/>
+		<result property="NODETYPE" column="NODETYPE"/>
+		<result property="NODEPROCER" column="NODEPROCER"/>
+		<result property="NODEPROCERNAME" column="NODEPROCERNAME"/>
+		<result property="NODEPROCERAREA" column="NODEPROCERAREA"/>
+		<result property="REGIONID" column="REGION_ID"/>
+		<result property="PROCUNIT" column="PROCUNIT"/>
+		<result property="PROCUNITNAME" column="PROCUNITNAME"/>
+		<result property="NODESTATE" column="NODESTATE"/>
+		<result property="NODESTARTTIME" column="NODESTARTTIME"/>
+		<result property="NODEENDTIME" column="NODEENDTIME"/>
+		<result property="NODEADV" column="NODEADV"/>
+		<result property="TIMELIMIT" column="TIMELIMIT"/>
+		<result property="PROMISETIMEUNIT" column="PROMISETIMEUNIT"/>
+		<result property="NODERESULT" column="NODERESULT"/>
+		<result property="OCCURTIME" column="OCCURTIME"/>
+		<result property="MAKETIME" column="MAKETIME"/>
+		<result property="SIGNSTATE" column="SIGNSTATE"/>
+		<result property="NOTICE" column="NOTICE"/>
+		<result property="EXT1" column="EXT1"/>
+		<result property="EXT2" column="EXT2"/>
+		<result property="EXT3" column="EXT3"/>
+		<result property="EXT4" column="EXT4"/>
+    </resultMap>
+
+    <!-- all sql columns -->
+    <sql id="columns">
+         `ORGBUSNO`,`PROJID`,`DATAVER`,`STDVER`,`SN`,`NODENAME`,`NODECODE`,`NODETYPE`,`NODEPROCER`,`NODEPROCERNAME`,`NODEPROCERAREA`,`REGION_ID`,`PROCUNIT`,`PROCUNITNAME`,`NODESTATE`,`NODESTARTTIME`,`NODEENDTIME`,`NODEADV`,`TIMELIMIT`,`PROMISETIMEUNIT`,`NODERESULT`,`OCCURTIME`,`MAKETIME`,`SIGNSTATE`,`NOTICE`,`EXT1`,`EXT2`,`EXT3`,`EXT4`
+	</sql>
+	<select id="get" resultMap="EaJcStepProcRM" resultType="com.xxl.job.executor.model.EaJcStepProc">
+		select * from ea_jc_step_proc
+	</select>
+	<insert id="eaJcStepProcSave" parameterType="com.xxl.job.executor.model.EaJcStepProc">
+		insert into ea_jc_step_proc
+		(ORGBUSNO ,PROJID ,DATAVER ,STDVER ,SN ,NODENAME ,NODECODE ,NODETYPE ,NODEPROCER ,
+		NODEPROCERNAME ,NODEPROCERAREA ,REGION_ID ,PROCUNIT ,PROCUNITNAME ,NODESTATE ,NODESTARTTIME ,
+		NODEENDTIME ,NODEADV ,TIMELIMIT ,PROMISETIMEUNIT ,
+		NODERESULT ,OCCURTIME ,MAKETIME ,SIGNSTATE ,NOTICE ,EXT1 ,EXT2 ,EXT3 ,EXT4)
+		values (#{ORGBUSNO } ,#{PROJID} ,#{DATAVER} ,#{STDVER} ,#{SN} ,#{NODENAME} ,#{NODECODE} ,
+		#{NODETYPE} ,#{NODEPROCER} ,#{NODEPROCERNAME} ,#{NODEPROCERAREA} ,#{REGIONID} ,#{PROCUNIT} ,
+		#{PROCUNITNAME  } ,#{NODESTATE } ,#{NODESTARTTIME } ,#{NODEENDTIME   } ,#{NODEADV} ,#{TIMELIMIT } ,
+		#{PROMISETIMEUNIT} ,#{NODERESULT } ,
+		#{OCCURTIME } ,sysdate ,#{SIGNSTATE} ,#{NOTICE } ,#{EXT1} ,#{EXT2} ,#{EXT3} ,#{EXT4 })
+	</insert>
+	<delete id="eaJcStepProcDelete" parameterType="java.lang.String">
+		delete  from ea_jc_step_proc where ORGBUSNO = #{ORGBUSNO}
+	</delete>
+</mapper>
