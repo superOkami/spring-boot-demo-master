@@ -87,7 +87,7 @@ public class IndexController {
 		/*if (!PermissionInterceptor.ifLogin(request)) {
 			return "redirect:/toLogin";
 		}*/
-		System.out.println("-----------");
+		System.out.println("-----------111");
 		return "help";
 	}
 
