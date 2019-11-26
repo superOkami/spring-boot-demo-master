@@ -4,14 +4,14 @@ spring:
   datasource:
     datasource1:
       driver-class-name: oracle.jdbc.OracleDriver
-      jdbc-url: jdbc:oracle:thin:@192.168.7.35:1521:orcl
-      username: estate
+      jdbc-url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+      username: estate_dz
       password: estate
 
     datasource2:
       driver-class-name: oracle.jdbc.OracleDriver
-      jdbc-url: jdbc:oracle:thin:@192.168.7.35:1521:orcl
-      username: pfuser
+      jdbc-url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+      username: pfuser_dz
       password: 123
       maxActive: 20
       initialSize: 5

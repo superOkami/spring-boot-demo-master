@@ -43,7 +43,6 @@ public class aaaa<cmt> {
 
     @RequestMapping("/mods")
     public String mod() {
-        System.out.println("测试Git");
         return "mods";
     }
 
@@ -94,7 +93,6 @@ public class aaaa<cmt> {
 
     @RequestMapping("/layer")
     public String layer() {
-        System.out.println("j叽叽叽叽111");
         return "layer";
     }
 
