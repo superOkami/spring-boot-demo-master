@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栅格布局</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<script src="../layui/layui.js"></script>
+<div class="layui-anim layui-anim-up layui-anim-loop">哈哈哈</div>
+
+<div class="layui-container">
+    常规布局（以中型屏幕桌面为例）：
+    <div class="layui-row">
+        <div class="layui-col-md9">
+            你的内容 9/12
+        </div>
+        <div class="layui-col-md3">
+            你的内容 3/12
+        </div>
+    </div>
+
+    移动设备、平板、桌面端的不同表现：
+    <div class="layui-row">
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+            移动：6/12 | 平板：6/12 | 桌面：4/12
+        </div>
+        <div class="layui-col-xs6 layui-col-sm6 layui-col-md4">
+            移动：6/12 | 平板：6/12 | 桌面：4/12
+        </div>
+        <div class="layui-col-xs4 layui-col-sm12 layui-col-md4">
+            移动：4/12 | 平板：12/12 | 桌面：4/12
+        </div>
+        <div class="layui-col-xs4 layui-col-sm7 layui-col-md8">
+            移动：4/12 | 平板：7/12 | 桌面：8/12
+        </div>
+        <div class="layui-col-xs4 layui-col-sm5 layui-col-md4">
+            移动：4/12 | 平板：5/12 | 桌面：4/12
+        </div>
+    </div>
+</div>
+<div class="layui-row layui-col-space10">
+    <div class="layui-col-md4">
+        1/3
+    </div>
+    <div class="layui-col-md4">
+        1/3
+    </div>
+    <div class="layui-col-md4">
+        1/3
+    </div>
+</div>
+<a href="http://www.layui.com" class="layui-btn">一个可跳转的按钮</a>
+<button type="button" class="layui-btn">一个标准的按钮</button>
+<div>hhhhhhhhhhh</div>
+<button type="button" class="layui-btn layui-btn-fluid">流体按钮（最大化适应）</button>
+<button type="button" class="layui-btn">
+    <i class="layui-icon">&#xe608;</i> 添加
+</button>
+
+<button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+    <i class="layui-icon">&#x1002;</i>
+</button>
+<i class="layui-icon">&#xe617;</i>
+
+</body>
+</html>
