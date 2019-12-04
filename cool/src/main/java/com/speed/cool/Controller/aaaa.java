@@ -48,7 +48,7 @@ public class aaaa<cmt> {
 
     @RequestMapping("/table")
     public String table() {
-        return "table";
+        return "table/table";
     }
 
     @RequestMapping("/houtai")
@@ -58,7 +58,7 @@ public class aaaa<cmt> {
 
     @RequestMapping("/hi")
     public String hi() {
-        return "hello";
+        return "table/hello";
     }
 
     @RequestMapping("/form")

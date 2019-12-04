@@ -2,6 +2,7 @@ package com.speed.cool.utils;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.json.xml.XMLSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,11 +12,10 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 //import net.sf.json.JSONObject;
-
+@Slf4j
 @Component
 public class XMLUtil {
     static private Logger logger = LoggerFactory.getLogger(XMLUtil.class);
-
     public JSONObject readStringXml(String xml, String num) {
         String str = "";
         XMLSerializer xmlSerializer = new XMLSerializer();

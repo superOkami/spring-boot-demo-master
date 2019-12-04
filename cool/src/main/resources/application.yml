@@ -20,16 +20,17 @@ logging:
   level:
     com.speed.cool.Dao1: DEBUG
     com.speed.cool.Dao2: DEBUG
+  file: cool.log
 
 realEstate:
   service:
     url: http://47.110.150.232:9999
 #keycloak
 keycloak:
-  realm: Hello-world-authz #当前目录所在的realm
-  resource: keycloak-springboot-hello #client 名称
+  realm: gravitee #当前目录所在的realm
+  resource: gravitee-gateway #client 名称
   public-client: true
-  auth-server-url: http://localhost:8080/auth #keycloak启动地址
+  auth-server-url: http://localhost:8000/auth #keycloak启动地址
   securityConstraints[0].authRoles[0]: user
   securityConstraints[0].securityCollections[0].patterns: /*
 #"关闭缓存, 即时刷新"
