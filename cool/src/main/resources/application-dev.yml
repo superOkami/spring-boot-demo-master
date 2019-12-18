@@ -1,35 +1,4 @@
-server:
-  port: 8888
-spring:
-  datasource:
-    datasource1:
-      driver-class-name: oracle.jdbc.OracleDriver
-      jdbc-url: jdbc:oracle:thin:@47.110.150.232:1521:orcl
-      username: estate
-      password: estate
-
-    datasource2:
-      driver-class-name: oracle.jdbc.OracleDriver
-      jdbc-url: jdbc:oracle:thin:@47.110.150.232:1521:orcl
-      username: pfuser
-      password: 123
-      maxActive: 20
-      initialSize: 5
-      maxWait: 60000
-      minIdle: 1
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: select 'x'
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      poolPreparedStatements: true
-      maxOpenPreparedStatements: 20
-
-
-
-
-
-
-
-
+#nacos:
+#  config:
+#    server-addr: 127.0.0.1:8848
+#    namespace: 6cd68800-9ad6-49e5-b756-fda193827e9c

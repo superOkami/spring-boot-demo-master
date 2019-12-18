@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration scan = "true">
   <property name="FILE_ERROR_PATTERN"
             value="${FILE_LOG_PATTERN:-%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} %file:%line: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
   <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<springProfile name="local">
+		<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+			<encoder>
+				<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+				<charset>utf-8</charset>
+			</encoder>
+		</appender>
+
+		<!--默认所有的包以info-->
+		<root level="info">
+			<appender-ref ref="STDOUT"/>
+		</root>
+
+		<!--各个服务的包在本地执行的时候，打开debug模式-->
+		<logger name="cn.stylefeng" level="debug" additivity="false">
+			<appender-ref ref="STDOUT"/>
+		</logger>
+	</springProfile>
+
+
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">
 			<level>INFO</level>
@@ -36,7 +57,7 @@
 			<!--<totalSizeCap>1GB</totalSizeCap>-->
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<!-- maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 -->
-				<maxFileSize>2MB</maxFileSize>
+				<maxFileSize>5MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 		<!--<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">-->
@@ -64,7 +85,7 @@
 			<maxHistory>90</maxHistory>
 			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 				<!-- maxFileSize:这是活动文件的大小，默认值是10MB,本篇设置为1KB，只是为了演示 -->
-				<maxFileSize>2MB</maxFileSize>
+				<maxFileSize>5MB</maxFileSize>
 			</timeBasedFileNamingAndTriggeringPolicy>
 		</rollingPolicy>
 		<encoder>
@@ -72,8 +93,8 @@
 			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
 		</encoder>
 	</appender>
-
-	<root level="debug">
+	<logger name="com.speed.cool.Controller.LogbackDemo" level="debug"/>
+	<root level="info">
 		<appender-ref ref="CONSOLE"/>
 		<appender-ref ref="FILE_INFO"/>
 		<appender-ref ref="FILE_ERROR"/>

@@ -19,7 +19,7 @@ public class WebserviceUtil {
     private static String serviceUrl;
     private static String fgServiceUrl;
 
-    @Value("${realEstate.service.url}")
+    //@Value("${realEstate.service.url}")
     public void setServiceUrl(String serviceUrl) {
         this.serviceUrl = serviceUrl;
     }

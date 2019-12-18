@@ -1,35 +1,14 @@
-server:
-  port: 8082
-spring:
-  datasource:
-    datasource1:
-      driver-class-name: oracle.jdbc.OracleDriver
-      jdbc-url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
-      username: estate_dz
-      password: estate
-
-    datasource2:
-      driver-class-name: oracle.jdbc.OracleDriver
-      jdbc-url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
-      username: pfuser_dz
-      password: 123
-      maxActive: 20
-      initialSize: 5
-      maxWait: 60000
-      minIdle: 1
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 300000
-      validationQuery: select 'x'
-      testWhileIdle: true
-      testOnBorrow: false
-      testOnReturn: false
-      poolPreparedStatements: true
-      maxOpenPreparedStatements: 20
-
-
-
-
-
-
-
-
+#
+#nacos:
+#  config:
+#    server-addr: 127.0.0.1:8848
+#    namespace: c8e5110d-b459-47bd-922d-25a83f276357
+#server:
+#  port: 6688
+#keycloak:
+#  realm: gravitee #当前目录所在的realm
+#  resource: cool #client 名称
+#  public-client: true
+#  auth-server-url: http://localhost:8080/auth #keycloak启动地址
+#  securityConstraints[0].authRoles[0]: user
+#  securityConstraints[0].securityCollections[0].patterns: /*

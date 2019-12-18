@@ -28,6 +28,7 @@ public class hello {
         //log.info(m.toString());
         //System.out.println("热部署666");
         //System.out.println("hhhhh");
+        log.info("info----------test");
         return "hello";
     }
 

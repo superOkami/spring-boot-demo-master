@@ -1,17 +1,29 @@
 package com.speed.cool.Controller;
 
+import com.speed.cool.Dao1.Db1;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author wj
  * @date 2019/8/210:22
  */
+@Slf4j
 @Controller
 @RequestMapping("/hello")
 public class aaaa<cmt> {
-
-
+    @Autowired
+    Db1 db1;
+    @RequestMapping("/get")
+    @ResponseBody
+    public Object te(){
+       Integer count = db1.get();
+        System.out.println("1131");
+       return count;
+    }
     /**
      * @throws
      * @Description:
@@ -106,5 +118,10 @@ public class aaaa<cmt> {
         return "tips";
     }
 
+    public static void main(String[] args) {
+        log.error("error");
+        log.info("123231");
+        log.debug("debug");
+    }
 
 }
