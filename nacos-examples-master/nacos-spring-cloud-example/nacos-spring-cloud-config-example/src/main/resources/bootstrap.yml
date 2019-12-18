@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        group: DEVELOP_GROUP
+        ext-config:
+          - dataId: example.yaml
+#            group: DEVELOP_GROUP
+            refresh: true
+
+          - dataId: text.yaml
+#            group: spaas_shell
+            refresh: true
+
+#          - dataId: spaas-jetcache.yaml
+#            group: spaas_shell
+#            refresh: true
+#
+#          - dataId: spaas-amqp.yml
+#            group: spaas_shell
+#            refresh: true
+#
+#          - dataId: spaas-dubbo.yml
+#            group: spaas_shell
+#            refresh: true
+  #        namespace:
