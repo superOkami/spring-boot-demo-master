@@ -1,33 +1,20 @@
+# Tomcat
 server:
-  port: 80
-  servlet:
-    context-path: /demo
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8001
+  session:
+    timeout:7200
 
-
-
-
-
-# 分布式文件系统FDFS配置
 fdfs:
-  soTimeout: 1500 #socket连接超时时长
-  connectTimeout: 600 #连接tracker服务器超时时长
-  reqHost: 192.168.126.130   #nginx访问地址
-  reqPort: 80              #nginx访问端口
-  thumbImage: #缩略图生成参数，可选
+  so-timeout: 1501
+  connect-timeout: 601
+  resHost: 192.168.126.130
+  storagePort: 8888  # nginx 访问端口
+  thumb-image:             #缩略图生成参数
     width: 150
     height: 150
-  trackerList: #TrackerList参数,支持多个，我这里只有一个，如果有多个在下方加- x.x.x.x:port
-    - 192.168.126.130:22122
-#    - 192.168.8.102:22122
-
-spring:
-  application:
-    name: FastDFS-Test
-  servlet:
-    multipart:
-      max-file-size: 100MB # 最大支持文件大小
-      max-request-size: 100MB # 最大支持请求大小
-  mvc:
-    view:
-      prefix: /WEB-INF/
-      suffix: .jsp
+  web-server-url: 192.168.126.130/
+  tracker-list: 192.168.126.130:22122

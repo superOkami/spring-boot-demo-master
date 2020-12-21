@@ -2,6 +2,10 @@ package com.xkcoding.swagger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableMBeanExport;
+import org.springframework.jmx.support.RegistrationPolicy;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * <p>
@@ -16,6 +20,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version: V1.0
  * @modified: yangkai.shen
  */
+@EnableSwagger2
+@Configuration
+@EnableMBeanExport(registration = RegistrationPolicy.IGNORE_EXISTING)
 @SpringBootApplication
 public class SpringBootDemoSwaggerApplication {
 
