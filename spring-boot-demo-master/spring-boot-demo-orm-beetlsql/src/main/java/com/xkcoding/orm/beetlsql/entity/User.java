@@ -1,9 +1,6 @@
 package com.xkcoding.orm.beetlsql.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.beetl.sql.core.annotatoin.Table;
 
 import java.io.Serializable;

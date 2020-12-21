@@ -7,7 +7,8 @@ CREATE TABLE `orm_user` (
   `email` VARCHAR(32) NOT NULL UNIQUE COMMENT '邮箱',
   `phone_number` VARCHAR(15) NOT NULL UNIQUE COMMENT '手机号码',
   `status` INT(2) NOT NULL DEFAULT 1 COMMENT '状态，-1：逻辑删除，0：禁用，1：启用',
-  `create_time` DATETIME NOT NULL DEFAULT NOW() COMMENT '创建时间',
-  `last_login_time` DATETIME DEFAULT NULL COMMENT '上次登录时间',
+*---*+963
+.--  `last_login_time` DATETIME DEFAULT NULL COMMENT '上次登录时间',
   `last_update_time` DATETIME NOT NULL DEFAULT NOW() COMMENT '上次更新时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Spring Boot Demo Orm 系列示例表';
+71

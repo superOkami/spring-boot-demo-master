@@ -8,13 +8,13 @@ import cn.hutool.crypto.SecureUtil;
 import cn.hutool.json.JSONUtil;
 import com.xkcoding.orm.beetlsql.SpringBootDemoOrmBeetlsqlApplicationTests;
 import com.xkcoding.orm.beetlsql.entity.User;
-import com.xkcoding.orm.beetlsql.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
 import org.beetl.sql.core.engine.PageQuery;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
@@ -34,22 +34,32 @@ import java.util.List;
 @Slf4j
 public class UserServiceTest extends SpringBootDemoOrmBeetlsqlApplicationTests {
     @Autowired
+    @Qualifier("UserServiceImpl")
     private UserService userService;
-
+    /**
+    * @Description: beetlsql增加
+    * @Param: []
+    * @return: void
+    * @throws:
+    * @since
+    * @Author: wj
+    * @Date: 2020/1/3 10:44
+    */
     @Test
     public void saveUser() {
         String salt = IdUtil.fastSimpleUUID();
-        User user = User.builder().name("testSave3").password(SecureUtil.md5("123456" + salt)).salt(salt).email("testSave3@xkcoding.com").phoneNumber("17300000003").status(1).lastLoginTime(new DateTime()).createTime(new DateTime()).lastUpdateTime(new DateTime()).build();
+        User user = User.builder().name("testSave41").password(SecureUtil.md5("123456" + salt)).salt(salt).email("testSav12e3@xkc1oding.com").phoneNumber("17300121000003").status(1).lastLoginTime(new DateTime()).createTime(new DateTime()).lastUpdateTime(new DateTime()).build();
 
         user = userService.saveUser(user);
-        Assert.assertTrue(ObjectUtil.isNotNull(user.getId()));
+        //Assert.assertTrue(ObjectUtil.isNotNull(user.getId()));
         log.debug("【user】= {}", user);
     }
 
     @Test
     public void saveUserList() {
+        //List<User>userList = Lists.newArrayList();
         List<User> users = Lists.newArrayList();
-        for (int i = 5; i < 15; i++) {
+        for (int i = 15; i < 20; i++) {
             String salt = IdUtil.fastSimpleUUID();
             User user = User.builder().name("testSave" + i).password(SecureUtil.md5("123456" + salt)).salt(salt).email("testSave" + i + "@xkcoding.com").phoneNumber("1730000000" + i).status(1).lastLoginTime(new DateTime()).createTime(new DateTime()).lastUpdateTime(new DateTime()).build();
             users.add(user);
@@ -60,23 +70,23 @@ public class UserServiceTest extends SpringBootDemoOrmBeetlsqlApplicationTests {
 
     @Test
     public void deleteUser() {
-        userService.deleteUser(1L);
-        User user = userService.getUser(1L);
+        userService.deleteUser(3L);
+        User user = userService.getUser(3L);
         Assert.assertTrue(ObjectUtil.isNull(user));
     }
 
     @Test
     public void updateUser() {
         User user = userService.getUser(2L);
-        user.setName("beetlSql 修改后的名字");
+        user.setName(" 修改后的名字");
         User update = userService.updateUser(user);
-        Assert.assertEquals("beetlSql 修改后的名字", update.getName());
+        Assert.assertEquals(" 修改后的名字", update.getName());
         log.debug("【update】= {}", update);
     }
 
     @Test
     public void getUser() {
-        User user = userService.getUser(1L);
+        User user = userService.getUser(2L);
         Assert.assertNotNull(user);
         log.debug("【user】= {}", user);
     }
@@ -92,6 +102,7 @@ public class UserServiceTest extends SpringBootDemoOrmBeetlsqlApplicationTests {
     public void getUserByPage() {
         List<User> userList = userService.getUserList();
         PageQuery<User> userByPage = userService.getUserByPage(1, 5);
+        log.info(""+userList.size());
         Assert.assertEquals(5, userByPage.getList().size());
         Assert.assertEquals(userList.size(), userByPage.getTotalRow());
         log.debug("【userByPage】= {}", JSONUtil.toJsonStr(userByPage));

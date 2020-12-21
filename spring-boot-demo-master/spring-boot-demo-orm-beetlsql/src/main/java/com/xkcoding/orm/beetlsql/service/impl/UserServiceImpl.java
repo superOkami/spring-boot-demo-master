@@ -24,7 +24,7 @@ import java.util.List;
  * @version: V1.0
  * @modified: yangkai.shen
  */
-@Service
+@Service("UserServiceImpl")
 @Slf4j
 public class UserServiceImpl implements UserService {
 
@@ -42,7 +42,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User saveUser(User user) {
-        userDao.insert(user, true);
+        userDao.createLambdaQuery().insert(user);
+        //userDao.insert(user, true);
         return user;
     }
 
@@ -63,7 +64,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void deleteUser(Long id) {
-        userDao.deleteById(id);
+        userDao.createLambdaQuery().andEq(User::getId,id).delete();
+        //userDao.deleteById(id);
     }
 
     /**
@@ -77,7 +79,8 @@ public class UserServiceImpl implements UserService {
         if (ObjectUtil.isNull(user)) {
             throw new RuntimeException("用户id不能为null");
         }
-        userDao.updateTemplateById(user);
+        userDao.createLambdaQuery().andEq(User::getId,user.getId()).update(user);
+        //userDao.updateTemplateById(user);
         return userDao.single(user.getId());
     }
 
@@ -89,7 +92,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User getUser(Long id) {
-        return userDao.single(id);
+        //return userDao.single(id);
+        return userDao.createLambdaQuery().single(String.valueOf(id));
     }
 
     /**
@@ -99,7 +103,8 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<User> getUserList() {
-        return userDao.all();
+        //return userDao.all();
+        return userDao.createLambdaQuery().select();
     }
 
     /**
